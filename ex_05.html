@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>boostcourse_style</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+
+<!-- inline -> internal -> external 순으로 적용된다. -->
+
+<!-- inline -> html 태그 안에 적용
+
+internal -> style 태그로 지정한다. 유지보수가 어렵
+
+external -> css 파일을 include 시키는 방법. -->
+
+<meta charset="utf-8">
+<style>
+  div > p {
+    font-size:20px;   //div 하위의 p의 속성을 나타냄  internal 방식
+  }
+
+</style>
+<!-- external 기법 -->
+<link rel="stylesheet" href="./ex_05.css">
+</head>
+
+<body>
+<div>
+  <p style="color:blue;">
+ inline 기법 : 색이 파란색인 글씨입니다.
+  </p>
+
+</div>
+
+</body>
+
+<script></script>
+</html>

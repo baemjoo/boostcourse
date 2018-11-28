@@ -1,0 +1,6 @@
+div > p {
+  /* inline 기법으로 이미 적용되어 있어서
+  red로 나타나지 않음. */
+  color:red;
+  border : 1px solid slategray;
+}
