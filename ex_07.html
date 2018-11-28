@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>boostcourse_css_specificity</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+<style>
+  /* span{
+    color:red;
+  }
+  span{
+    color:blue 나중에 선언된 span 속성이 적용
+  } */
+
+
+  /* body > span{
+    color:red;   구체적으로 선언된 속성이 적용
+  }
+  span{
+    color:blue;
+  } */
+
+  #a{
+    /* id */
+    color:red;
+  }
+  .b{
+    /* class */
+    color:blue;
+  }
+  div{
+    /* element */
+    color:green;
+  }
+
+  /* id -> class -> element 순으로 속성이 적용 */
+
+</style>
+</head>
+
+<body>
+
+<span> 이 색은 무슨색입니까? </span> <br><br>
+
+<div id="a" class="b">
+  이 Text의 색은 무슨색입니까?
+</div>
+</body>
+<script></script>
+</html>
