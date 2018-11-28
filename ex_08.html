@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>boostcourse_css_selector</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+
+<style>
+
+/* tag */
+span{
+  color:red;
+  font-size:20px;
+}
+
+/* id */
+span#spanid{
+  color:blue;
+  font-size:30px;
+}
+
+/* class */
+span.spanclass{
+  color:green;
+  font-size:40px;
+}
+
+span,span#spanid,span.spanclass {
+  border:2px solid slategray;
+
+}
+
+div#nchild>p:nth-child(2){
+  color:purple;
+  font-size:50px;
+}
+
+div#tchild>p:nth-of-type(2){
+  color:orange;
+  font-size:50px;
+}
+</style>
+</head>
+
+
+<body>
+
+<h1> css selector</h1>
+<h3> : HTML의 요소를 tag, id, class, html태그 속성 등을 통해 쉽게 찾아주는 방법</h3>
+
+<div>
+  <span>tag속성을 가짐</span>
+</div>
+
+<div>
+  <span id="spanid">spanid 속성을 가짐</span>
+</div>
+
+<div>
+  <span class="spanclass">spanclass 속성을 가짐</span>
+</div>
+
+<br><br><br><br>
+
+<div id="nchild">
+  <p>첫번째 단락입니다.</p>
+  <h3>첫번째 h3입니다.</h3>
+  <p>두번째 단락입니다.</p>
+  <h3>두번째 h3입니다.</h3>
+  <p>세번째 단락입니다.</p>
+  <h3>세번째 h3입니다.</h3>
+  <p>네번째 단락입니다.</p>
+  <h3>네번째 h3입니다.</h3>
+  <p>다섯번째 단락입니다.</p>
+  <h3>다섯번째 h3입니다.</h3>
+</div>
+
+<br><br><br><br>
+
+<div id="tchild">
+  <p>첫번째 단락입니다.</p>
+  <h3>첫번째 h3입니다.</h3>
+  <p>두번째 단락입니다.</p>
+  <h3>두번째 h3입니다.</h3>
+  <p>세번째 단락입니다.</p>
+  <h3>세번째 h3입니다.</h3>
+  <p>네번째 단락입니다.</p>
+  <h3>네번째 h3입니다.</h3>
+  <p>다섯번째 단락입니다.</p>
+  <h3>다섯번째 h3입니다.</h3>
+</div>
+
+</body>
+<script></script>
+</html>
