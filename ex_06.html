@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>boostcourse_css_priority</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+<style>
+body > div{
+  color:green;
+  font-size:30px;
+  border:2px solid slategray;
+  padding: 30px;
+}
+div ul li div p {
+  color : red;
+  padding: 50px;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <span>boostcoure css 상속순위에 대해 알아봅시다.</span>
+  <ul>
+    <li>
+      <span>First li</span>
+      <div>
+        <p>
+          이 text의 색은 빨간색이고 padding 은 50입니다.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span>Second li</span>
+      <div>
+        <p>
+          이 text의 색은 빨간색이고 padding 은 50입니다.
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</body>
+<script></script>
+</html>
