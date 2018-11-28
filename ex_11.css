@@ -1,0 +1,35 @@
+.wrap{
+  position:relative;
+}
+
+.wrap>div{
+  width:150px;
+  height:100px;
+  border:1px solid gold;
+  font-size:1em;
+  text-align:center;
+  line-height: 100px;
+  margin: 10px;
+}
+
+.relative{
+  position: relative;;
+  left: 700px;
+  bottom:350px;
+}
+
+/* top left값을 0이라도 꼭 주는 것이 중요 */
+/* relative의 왼쪽 위 꼭지점을 기준으로 움직인다. */
+.absolute{
+  position: absolute;;
+  left: 700px;
+  bottom:500px;
+}
+
+/* body를 기준으로 변경 */
+/* 스크롤이 돼도 항상 똑같은 자리에 위치 */
+.fixed{
+  position: fixed;
+  top:530px;
+  right: 100px;
+}

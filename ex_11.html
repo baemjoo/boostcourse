@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>boostcourse_position</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+
+<style>
+ol > li {
+  font-size:20px;
+  color:blue;
+}
+</style>
+
+<link rel="stylesheet" href="./ex_11.css">
+</head>
+
+<body>
+
+<h1>position</h1>
+<br><br>
+<ol>
+  <li>position</li>
+  <p>position 속성으로 특별한 배치를 할 수도 있습니다.</p>
+  <p>position 속성은 기본 static이다. 그냥 순서대로 배치됩니다.</p>
+  <li>absolute</li>
+  <p>absolute 속성은 기준점에 따라서 특별한 위치에 위치합니다.</p>
+  <p>top/left/right/bottom 으로 설정합니다.</p>
+  <p>기준점을 상위엘리먼트로 단계적으로 찾아가는데 static 이 아닌 position이 기준점입니다.</p>
+  <li>relative</li>
+  <p>원래 자신이 위치해야 할 곳을 기준으로 이동합니다.</p>
+  <p>top/left/right/bottom 으로 설정합니다.</p>
+  <li>fixed</li>
+  <p>viewport(전체화면) 좌측, 맨 위를 기준으로 동작합니다.</p>
+</ol>
+
+<br><br>
+
+<div class="wrap">
+  <div class="static">static(default)</div>
+  <div class="relative">relative</div>
+  <div class="absolute">absolute</div>
+  <div class="fixed">fixed</div>
+</div>
+</body>
+<script></script>
+</html>
