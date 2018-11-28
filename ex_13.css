@@ -1,0 +1,19 @@
+div {
+  width:100px;
+  height:100px;
+  border:1px solid red;
+  padding:50px;
+  font-size:1em;
+}
+
+.box-content {
+  box-sizing:content-box;
+}
+
+
+
+/* 그대로 유지됨
+padding 값이 너무 커지면 변하기는 함 */
+.box-border {
+  box-sizing:border-box;
+}
