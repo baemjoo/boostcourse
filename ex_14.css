@@ -1,0 +1,59 @@
+
+li{
+  list-style: none;
+}
+
+header{
+  background-color: : #eee;
+}
+
+#wrap
+{
+  /* left, right 자식으로 인식하기 위해서 */
+  overflow: auto;
+
+  margin: 20px 0px 0px 20px;
+}
+
+.left , .right,.real_right{
+  /* 높이값은자동으로 채워지지 않음. */
+  float: left;
+  height: 300px;
+}
+.left{
+background-color: orange;
+float:left;
+width: 17%;
+text-align: left;
+margin-right: 3%
+}
+
+.right{
+  background-color: gold;
+  float:left;
+  width: 60%;
+  text-align:center;
+}
+
+.right > h2{
+  position: relative;
+}
+
+.right .emoticon{
+  position: absolute;
+  top:0px;
+  right:30%;
+  color:white;
+}
+
+.real_right{
+  background-color: #222222;
+  width: 17%;
+  margin-left: 3%;
+}
+
+footer{
+  background-color: #eee;
+
+  clear:left;
+}
