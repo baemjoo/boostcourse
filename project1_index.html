@@ -10,38 +10,41 @@ body{
   background-color:#c8c8c8;
 }
 
-nav{
+div #wrap{
+  position:relative;
+  width: 98%;
+  height: 100px;
+}
+
+#header{
+  position:relative;
   height:150px;
   margin-bottom:1%;
-
+  text-align:left;
 }
-article{
+
+div #container{
   height:800px;
   margin-top:1%;
   margin-bottom:1%;
-
 }
 
-footer{
+#footer {
+position:absolute;
+left:0;
+right:0;
+botton:0;
  height:100px;
  margin-top:1%;
  margin-bottom:1%;
- display:table-cell;
  vertical-align:middle;
  text-align:center;
 }
 
-nav,article,footer{
+#header,#container,#footer{
   background-color:#FFFFFF;
   margin-left:3%;
   margin-right:3%;
-}
-
-
-div #wrap{
-  width:100px;
-  box-shadow:5px 5px 5px 5px gray;
-  height:40px;
 }
 
 div .layout_in{
@@ -50,40 +53,77 @@ div .layout_in{
   background:#FFFFFF;
 }
 
-h1 .logo
+#header .logo
 {
   position:relative;
-  font-size:15px;
+  float:left;
+  font-size:50px;
   color:#666;
-  margin:0 0 0 40px;
-  text-align:center;
+  margin:25px 0 0 25px;
 }
 
+#header .logo a{
+  display:inline-block;
+  vertical-align:middle;
+  overflow:hidden;
+  line-height:150%;
+}
+
+#header .link{
+  float:right;
+  margin: 60px 40px 0 0;
+}
+
+#header .link > li{
+  position:relative;
+  display:inline-block;
+  margin-right:50px;
+  vertical-align:top;
+}
+
+ul, li {
+  list-style:none;
+}
 
 </style>
-
 </head>
-
 <body>
 
-<nav>
-  <ul>
-  <li><a href="http://www.naver.com">홈</a></li>
-  <li><button type="button" name="button" style="width:100px;height:50px;"></button></li>
-  <li><button type="button" name="button" style="width:100px;height:50px;"></button></li>
-  <li><button type="button" name="button" style="width:100px;height:50px;"></button></li>
-</ul>
+<!-- 전체 페이지 div -->
+<div id="wrap">
+
+<!-- header -->
+<header id="header">
+
+<!-- header div -->
+<div class="layout_in">
+
+  <h1 class="logo"><a href="http://www.naver.com">BMJ</a></h1>
+
+  <ul class="link">
+    <li>홈으로가기</li>
+    <li>자기소개</li>
+    <li>타이머</li>
+    <li>끝이당</li>
+  </ul>
+
+</div>
+</header>
+
+<!-- content div -->
+<div id="container">
+  내용
+
+</div>
+
+</div>
 
 
-</nav>
-
-<article>
-rltk
-</article>
-
-<footer>
+<!-- footer -->
+<footer id="footer">
 copyright@baemjoo<br>
 https://www.edwith.com
+box-shadow:5px 5px 5px 5px gray;
 
 </footer>
 </body>
