@@ -1,0 +1,161 @@
+body{
+  background-color:#c8c8c8;
+}
+
+#wrap{
+  position:relative;
+  width: 100%;
+  min-height:100%
+  display:table;
+}
+
+#header{
+  position:relative;
+  text-align:center;
+}
+
+ #container{
+  position:relative;
+  text-align:center;
+}
+
+#footer {
+ position:relative;
+ height:100px;
+ text-align:center;
+}
+
+#header,#container,#footer{
+  background-color:#FFFFFF;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+/* header */
+div .layout_in{
+  position:relative;
+  height:150px;
+  background:#FFFFFF;
+}
+
+#header .logo
+{
+  position:relative;
+  float:left;
+  font-size:50px;
+  height: 100%;
+  color:#666;
+  margin:25px 0 0 25px;
+}
+
+#header .logo a{
+  display:inline-block;
+  vertical-align:middle;
+  overflow:hidden;
+  line-height:150%;
+}
+
+#header .link{
+  float:right;
+  margin: 60px 40px 0 0;
+}
+
+#header .link > li{
+  position:relative;
+  display:inline-block;
+  margin-right:20px;
+}
+
+#header .link > li > div{
+  width:100px;
+  height:40px;
+  display: table-cell;
+  vertical-align: middle;
+  background-color:#93DAFF;
+  box-shadow:5px 5px 5px 5px gray;
+  box-sizing:border-box;
+}
+
+#header .link > li > div > a{
+    text-decoration:none;
+}
+
+ul, li {
+  list-style:none;
+}
+
+
+/* content */
+
+#content {
+  position : relative;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#content .page_basic{
+  min-height: :750px;
+}
+
+#content .page_header{
+  position:relative;
+  padding-top:50px;
+  padding-bottom:50px;
+  font-size:30px;
+  border-bottom:1px solid #454545;
+}
+
+#content .page_text{
+  padding-top:20px;
+  padding-bottom:20px;
+  font-size:15px;
+}
+
+#content .page_link{
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+#content .page_link > li{
+  position:relative;
+  display:inline-block;
+  margin-right:20px;
+}
+
+#content .page_link > li > div{
+  width:100px;
+  height:100px;
+  color:#FFFFFF;
+  display: table-cell;
+  vertical-align: middle;
+  background-color:#93DAFF;
+  box-sizing:border-box;
+  padding-bottom:20px;
+}
+
+#content .page_link > li > div > a{
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+#content .page_item{
+  position:relative;
+  padding-top: 20px;
+  padding-bottom:20px;
+  height:auto;
+}
+
+
+#content .page_item > span{
+  display: inline-block;
+  overflow:hidden;
+  position:relative;
+  min-height: 100%;
+  vertical-align: top;
+  border: 1px solid black;
+}
