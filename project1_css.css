@@ -84,8 +84,7 @@ ul, li {
   list-style:none;
 }
 
-
-/* content */
+/* index_html content */
 
 #content {
   position : relative;
@@ -93,11 +92,11 @@ ul, li {
   margin-bottom: 2%;
 }
 
-#content .page_basic{
+#content .index_basic{
   min-height: :750px;
 }
 
-#content .page_header{
+#content .index_header{
   position:relative;
   padding-top:50px;
   padding-bottom:50px;
@@ -105,24 +104,24 @@ ul, li {
   border-bottom:1px solid #454545;
 }
 
-#content .page_text{
+#content .index_text{
   padding-top:20px;
   padding-bottom:20px;
   font-size:15px;
 }
 
-#content .page_link{
+#content .index_link{
   padding-top:20px;
   padding-bottom:20px;
 }
 
-#content .page_link > li{
+#content .index_link > li{
   position:relative;
   display:inline-block;
   margin-right:20px;
 }
 
-#content .page_link > li > div{
+#content .index_link > li > div{
   width:100px;
   height:100px;
   color:#FFFFFF;
@@ -133,7 +132,7 @@ ul, li {
   padding-bottom:20px;
 }
 
-#content .page_link > li > div > a{
+#content .index_link > li > div > a{
   color:white;
   font-size:20px;
   text-decoration:none;
@@ -143,15 +142,14 @@ a:hover{
   cursor: pointer;
 }
 
-#content .page_item{
+#content .index_item{
   position:relative;
   padding-top: 20px;
   padding-bottom:20px;
   height:auto;
 }
 
-
-#content .page_item > span{
+#content .index_item > span{
   display: inline-block;
   overflow:hidden;
   position:relative;
@@ -159,3 +157,7 @@ a:hover{
   vertical-align: top;
   border: 1px solid black;
 }
+
+/* aboutme_html content */
+
+#
