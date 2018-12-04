@@ -6,97 +6,8 @@
 <meta charset="utf-8">
 <style>
 
-body{
-  background-color:#c8c8c8;
-}
-
-div #wrap{
-  position:relative;
-  width: 100%;
-  height: 1000px;
-  display:table;
-}
-
-#header{
-  position:relative;
-  height:150px;
-  margin-bottom:1%;
-  text-align:center;
-}
-
-div #container{
-  height:800px;
-  margin-top:1%;
-  margin-bottom:1%;
-  text-align:center;
-}
-
-#footer {
-position:absolute;
-left:0;
-right:0;
-botton:0;
- height:100px;
- margin-top:1%;
- margin-bottom:1%;
- vertical-align:middle;
- text-align:center;
-}
-
-#header,#container,#footer{
-  background-color:#FFFFFF;
-  margin-left:3%;
-  margin-right:3%;
-}
-
-div .layout_in{
-  position:relative;
-  height:100px;
-  background:#FFFFFF;
-}
-
-#header .logo
-{
-  position:relative;
-  float:left;
-  font-size:50px;
-  color:#666;
-  margin:25px 0 0 25px;
-}
-
-#header .logo a{
-  display:inline-block;
-  vertical-align:middle;
-  overflow:hidden;
-  line-height:150%;
-}
-
-#header .link{
-  float:right;
-  margin: 60px 40px 0 0;
-}
-
-#header .link > li{
-  position:relative;
-  display:inline-block;
-  margin-right:20px;
-}
-
-#header .link > li > div{
-  width:100px;
-  height:40px;
-  display: table-cell;
-  vertical-align: middle;
-  background-color:#93DAFF;
-  box-shadow:5px 5px 5px 5px gray;
-  box-sizing:border-box;
-}
-
-ul, li {
-  list-style:none;
-}
-
 </style>
+<link rel="stylesheet" href="./project1_css.css">
 </head>
 <body>
 
@@ -136,23 +47,59 @@ ul, li {
   </ul>
 
 </div>
+
 </header>
+
 
 <!-- content div -->
 <div id="container">
-  내용
+
+  <div id="content">
+
+    <section class="page_basic">
+
+      <header class="page_header">
+        웹프론트엔드 개발자
+      </header>
+
+      <article class="page_text">
+        <p>이런 훌륭한 강의를 무료로 볼 수 있어서 너무 감사합니다.</p>
+        <p>끝까지 열심히 듣겠습니다.</p>
+      </article>
+
+      <ul class="page_link">
+        <li>
+          <div>
+          <a href="http://www.naver.com">자기소개</a>
+        </div>
+      </li>
+      <li>
+        <div>
+        <a href="http://www.naver.com">내사진</a>
+      </div>
+    </li>
+      </ul>
+
+      <div class="page_item">
+        <span>
+      <img src="C:\Users\bmj\Desktop\boostcourse\project1_image.png" alt="이미지" width="400px" height="400px" align="center">
+        </span>
+      </div>
+
+    </section>
+
+  </div>
 
 </div>
-
-</div>
-
 
 <!-- footer -->
 <footer id="footer">
-copyright@baemjoo<br>
-https://www.edwith.com
-
+<br>copyright@baemjoo
+<br>https://www.edwith.com
 </footer>
+
+
+</div>
 </body>
 <script></script>
 </html>
