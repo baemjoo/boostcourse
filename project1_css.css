@@ -11,12 +11,12 @@ body{
 
 #header{
   position:relative;
+  max-width: 100%;
   text-align:center;
 }
 
  #container{
   position:relative;
-  text-align:center;
 }
 
 #footer {
@@ -32,7 +32,7 @@ body{
 }
 
 /* header */
-div .layout_in{
+#header .layout_in{
   position:relative;
   height:150px;
   background:#FFFFFF;
@@ -90,24 +90,31 @@ ul, li {
   position : relative;
   margin-top: 2%;
   margin-bottom: 2%;
+  text-align:center;
 }
 
 #content .index_basic{
-  min-height: :750px;
+  min-height: :500px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 #content .index_header{
   position:relative;
-  padding-top:50px;
-  padding-bottom:50px;
+  padding-top:10px;
+  padding-bottom:10px;
   font-size:30px;
-  border-bottom:1px solid #454545;
+  border-bottom:2px solid #454545;
+  font-size:30px;
+  font-weight: 600;
 }
 
 #content .index_text{
   padding-top:20px;
   padding-bottom:20px;
-  font-size:15px;
+  font-size:20px;
 }
 
 #content .index_link{
@@ -118,7 +125,7 @@ ul, li {
 #content .index_link > li{
   position:relative;
   display:inline-block;
-  margin-right:20px;
+  margin-right:30px;
 }
 
 #content .index_link > li > div{
@@ -160,4 +167,29 @@ a:hover{
 
 /* aboutme_html content */
 
-#
+#aboutme{
+  position : relative;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#aboutme .aboutme_basic{
+  min-height: 50px;
+  padding-top: 3%;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#aboutme .aboutme_header{
+  padding-top:1px;
+  padding-bottom: 1px;
+  font-size:25px;
+  font-weight: 600;
+}
+
+#aboutme .aboutme_content{
+  padding-top:5px;
+  margin-bottom: 2px;
+  font-size:15px;
+}
