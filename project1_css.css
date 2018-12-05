@@ -149,14 +149,14 @@ a:hover{
   cursor: pointer;
 }
 
-#content .index_item{
+ .material_item{
   position:relative;
   padding-top: 20px;
   padding-bottom:20px;
   height:auto;
 }
 
-#content .index_item > span{
+ .material_item > span{
   display: inline-block;
   overflow:hidden;
   position:relative;
@@ -192,4 +192,53 @@ a:hover{
   padding-top:5px;
   margin-bottom: 2px;
   font-size:15px;
+}
+
+
+/* photo_html content */
+
+#photo{
+  position:relative;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#photo .photo_basic{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-bottom: 1px solid #454545;
+}
+
+#photo .photo_meterial{
+  position:relative;
+  min-height: 200px;
+}
+
+#photo .photo_img{
+  float: left;
+  width: 30%;
+  height: auto;
+  margin-right: 3%;
+}
+
+#photo .photo_img > span{
+  display: inline-block;
+  overflow:hidden;
+  position:relative;
+  width: auto;
+  min-height: 100%;
+  vertical-align: top;
+  border:2px solid #454545;
+}
+
+#photo .photo_content{
+  overflow: hidden;
+  width:60%;
+  text-align:left;
+  padding-left: 3%;
+  padding-right: 3%;
 }
