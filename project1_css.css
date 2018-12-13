@@ -97,8 +97,8 @@ ul, li {
   min-height: :500px;
   padding-top: 2%;
   padding-bottom: 2%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
 #content .index_header{
@@ -174,15 +174,15 @@ a:hover{
 }
 
 #aboutme .aboutme_basic{
-  min-height: 50px;
+  height: 250px;
   padding-top: 3%;
   padding-bottom: 2%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
 #aboutme .aboutme_header{
-  padding-top:1px;
+  padding-top:3px;
   padding-bottom: 1px;
   font-size:25px;
   font-weight: 600;
@@ -191,7 +191,7 @@ a:hover{
 #aboutme .aboutme_content{
   padding-top:5px;
   margin-bottom: 2px;
-  font-size:15px;
+  font-size:18px;
 }
 
 
@@ -201,8 +201,8 @@ a:hover{
   position:relative;
   margin-top: 2%;
   margin-bottom: 2%;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 #photo .photo_basic{
@@ -210,35 +210,38 @@ a:hover{
   padding-bottom: 5%;
   padding-left: 5%;
   padding-right: 5%;
-  border-bottom: 1px solid #454545;
+  position:relative;
+  max-width: 100%;
+  min-height: 200px;
 }
 
 #photo .photo_meterial{
   position:relative;
+  max-width:100%;
   min-height: 200px;
 }
 
 #photo .photo_img{
   float: left;
-  width: 30%;
-  height: auto;
   margin-right: 3%;
+  max-width: 100%;
+  height:auto;
+  border:3px solid #454545;
 }
 
-#photo .photo_img > span{
+#photo .photo_img > img{
   display: inline-block;
   overflow:hidden;
   position:relative;
-  width: auto;
-  min-height: 100%;
+  max-width: 100%;
+  height:auto;
   vertical-align: top;
-  border:2px solid #454545;
 }
 
 #photo .photo_content{
   overflow: hidden;
-  width:60%;
+  max-width:60%;
   text-align:left;
-  padding-left: 3%;
+  padding-left: 4%;
   padding-right: 3%;
 }
