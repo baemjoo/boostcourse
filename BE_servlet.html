@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>BE-servlet</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+<style> </style>
+</head>
+<body>
+<div>
+  <h1>자바 웹 어플리케이션 (Java Web Application)</h1>
+  <ul>
+    <li><p>WAS(ex. tomcat)에 설치되어 동작하는 어플리케이션.</p></li>
+    <li><p>자바 웹 어플리케이션에는 HTML, CSSm 이미지, 자바로 작성된 클래스(Servelet도 포함됨, jsp, package,인터페이스 등), 각종 설정 파일 등이 포함된다.</p></li>
+  </ul>
+</div>
+
+<div>
+  <h1>자바 웹 어플리케이션의 폴더 구조</h1>
+  <ul>
+    <li>
+    <p>WEB-INF 폴더  web.xml 파일(배포 기술자라고 하는데 이 웹 어플리케이션에 대한 정보들을 다 가지고 있는 파일)</p>
+    <p>servlet 3.0미만에서는 필수로 가지고 있어야 되는 것이었는데</p>
+    <p>3.0이상에서는 어노테이션을 사용해서 대신해주는 부분들이 존재하기 때문에 필수는 아님.</p>
+    </li>
+    <li><p>lib 폴더는 각종 자료 파일들을 넣는다. (ex. jar 파일들)</p></li>
+    <li><p>classes 폴더(ex. java 패키지, class들)</p></li>
+  </ul>
+</div>
+<div>
+  <h1>Servlet</h1>
+  <ul>
+    <li>
+      <p>자바 웹 어플리케이션의 구성요소 중 동적인 처리를 하는 프로그램의 역할</p>
+      <p>동적인 페이지 : 사용자가 어떤 행위를 했을 떄 정보의 값이 바뀌어야 하는 경우</p>
+    </li>
+    <li><p>WAS에서 동작하는 Java class이다.</p></li>
+    <li><p>HttpServlet 클래스를 상속받아야 한다.</p></li>
+    <li>
+      <p>서블릿과 JSP로부터 최상의 결과를 얻으려면, 웹 페이지를 개발할 때 두가지를 조화롭게 사용해야 한다.</p>
+      <p>웹 페이지를 구성하는 화면은 JSP, 복잡한 프로그래밍은 servelet으로 구현</p>
+    </li>
+    <li><p>jsp에 사용되는 servlet파일은 밑의 경로에 저장된다.</p></li>
+    <li><p>workspace -> .metadata -> .plugins -> org.eclipse.wst.server.core -> tmp0 -> wtpwebapps -> 해당 프로젝트 </p></li>
+  </ul>
+</div>
+
+<div>
+  <h1>Servlet 작성 방법</h1>
+  <ol>
+    <li>Servlet 3.0 spec 이상</li>
+    <ul>
+      <li><p>web.xml 파일을 사용하지 않음</p></li>
+      <li><p>자바 어노테이션을 사용한다.</p></li>
+      <li><p>servlet 작성 시 url에 어떤 주소로 동작하는지 설정가능</p></li>
+    </ul>
+
+    <li>Servlet 3.0 spec 미만</li>
+    <ul>
+      <li><p>Servlet을 등록할 때 web.xml파일에 직접 등록</p></li>
+    </ul>
+  </ol>
+</div>
+
+<div>
+  <h1>Servlet 생명주기</h1>
+  <ul>
+    <li>HttpServlet 의 3가지 메소드를 오버라이딩</li>
+    <ul>
+      <li><p>init()</p></li>
+      <li><p>service(request,response)</p></li>
+      <li><p>destroy()</p></li>
+    </ul>
+
+    <li>Servlet의 LifeCycle</li>
+    <ul>
+      <li><p>init() 호출 : 맨 처음 서블릿 객체가 생성될 때 호출된다.</p></li>
+      <li><p>service() 호출 : 계속 호출된다.</p></li>
+      <li><p>destroy() 호출 : 서블릿 객체가 유효하지 않을 때 호출된다.</p></li>
+    </ul>
+
+    <li>설명</li>
+    <ul>
+      <li><p>서블릿은 서버에 서블릿 객체를 여러개 만들지 않는다.</p></li>
+      <li><p>요청된 객체가 메모리에 있는지 체크하여 있다면 service() 만 호출</p></li>
+      <li>
+       <p>하지만 서블릿의 수정으로 메모리에 올라가있는 서블릿 객체가 더이상 사용할 수 없게 되면 </p>
+       <p>destroy() 가 호출되고 다시 객체를 생성하고 init() service() 가 호출된다. </p>
+      </li>
+      <li><p>WAS는 서블릿 요청을 받으면 해당 서블릿이 메모리에 있는지 확인.</p></li>
+      <li><p>메모리에 없으면 init , service 호출</p></li>
+      <li><p>WAS가 종료되거나 웹 어플리케이션이 갱신될 경우 destory 호출</p></li>
+    </ul>
+
+    <li>service(request,response) 메소드</li>
+    <ul>
+      <li><p>HttpServlet의 service메소드는 템플릿 메소드 패턴으로</p></li>
+      <li><p>클라이언트의 요청이 GET일 경우 doGet메소드 호출</p></li>
+      <li><p>클라이언트의 요청이 POST일 경우 doPost메소드 호출</p></li>
+    </ul>
+  </ul>
+</div>
+
+<div>
+  <h1>HttpServlet</h1>
+  <ol>
+    <li>요청과 응답</li>
+    <ul>
+      <li>WAS는 웹 브라우저로부터 Servlet 요청을 받으면</li>
+      <ul>
+      <li><p>요청할 때 가지고 있는 정보를 HttpServletRequest 객체를 생성하여 저장</p></li>
+      <li><p>웹 브라우저에게 응답을 보낼 때 사용하기 위해 HttpServletResponse 객체를 생성</p></li>
+      <li><p>생성된 HttpServletRequest, HttpServletResponse 객체를 서블릿에세 전달</p></li>
+      </ul>
+    </ul>
+    <li>HttpServlet Request</li>
+    <ul>
+      <li><p>http프로토콜의 request 정보를 서블릿에게 전달하기 위한 목적으로 사용</p></li>
+      <li><p>헤더정보, 파라미터, 쿠키, URI, URL 등의 정보를 읽어 들이는 메소드를 가지고 있다.</p></li>
+      <li><p>Body의 Stream을 읽어 들이는 메소드를 가지고 있다.</p></li>
+    </ul>
+    <li>HttpServlet Response</li>
+    <ul>
+      <li>
+      <p>WAS는 어떤 클라이언트가 요청을 보냈는지 알고 있고, 해당 클라이언트에게 응답을 보내기 위한</p>
+      <p>HttpServletResponse 객체를 생성하여 서블릿에게 전달합니다.</p>
+      </li>
+      <li><p>서블릿은 해당 객체를 이용하여 content type, 응답코드, 응답 메시지등을 전송합니다.</p></li>
+    </ul>
+  </ol>
+
+</div>
+
+
+</div>
+</body>
+<script></script>
+</html>
