@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>BE-SQL</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+</head>
+<body>
+  <div>
+    <h1>SQL (Structured Query Language)</h1>
+    <ul>
+      <li>SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다.</li>
+      <li>관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다.</li>
+      <br>
+      <li>DML (Data Manipulation Language): 데이터를 조작하기 위해 사용합니다.
+        INSERT, UPDATE, DELETE, SELECT 등이 여기에 해당합니다.</li>
+        <li>DDL (Data Definition Language): 데이터베이스의 스키마를 정의하거나 조작하기 위해 사용합니다.
+          CREATE, DROP, ALTER 등이 여기에 해당합니다.
+        </li>
+        <li>DCL (Data Control Language) : 데이터를 제어하는 언어입니다.
+          권한을 관리하고, 테이터의 보안, 무결성 등을 정의합니다.
+          GRANT, REVOKE 등이 여기에 해당합니다.
+        </li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>MySQL 사용</h1>
+    <ul>
+      <li>접속</li>
+      <ul>
+        <li>cmd 창에서 mysql -u root -p</li>
+        <li>[u : user, p : password]</li>
+      </ul>
+      <br>
+      <li>Database 생성하기</li>
+      <ul>
+        <li>create database 'DB이름';</li>
+        <li>ex) create database connectdb;</li>
+      </ul>
+      <br>
+      <li>Database 삭제하기</li>
+      <ul>
+        <li>drop database DB이름;</li>
+        <li>drop database connectdb;</li>
+      </ul>
+      <br>
+      <li>Database 확인하기</li>
+      <ul>
+        <li>show databases;</li>
+      </ul>
+      <br>
+      <li>Database 전환하기</li>
+      <ul>
+        <li>use DB_NAME</li>
+      </ul>
+      <br>
+      <li>Database 사용자 생성과 권한주기</li>
+      <ul>
+        <li>사용자 확인</li>
+        <ul>
+          <li>select user from mysql.user;</li>
+        </ul>
+        <br>
+        <li>사용자 생성</li>
+        <ul>
+          <li>create user 'USER NAME' @'localhost' identified by 'PASSWORD';</li>
+          <li>create user 'starbucks' @'localhost' identified by '1234';</li>
+          <li>사용자 starbucks는 localhost로 부터 접속되었을 때 사용이 가능하다.</li>
+          <br>
+          <li>create user 'USER NAME' @'%' identified by 'PASSWORD';</li>
+          <li>create user 'coffee' @'%' identified by '1234';</li>
+          <li>사용자 coffee는 any host나 상관없이 접속이 가능하다.</li>
+        </ul>
+        <br>
+        <li>사용자 삭제</li>
+        <ul>
+          <li>drop user 'USER NAME' @'localhost';</li>
+          <li>drop user 'starbucks' @'localhost';</li>
+          <li><strong>select host,user from mysql.user 로 host와 user 확인</strong></li>
+        </ul>
+        <br>
+        <li>권한 부여</li>
+        <ul>
+          <li>grant all on DB.* to 'USER NAME' @'USER HOST'; </li>
+          <li>grant all on connectdb.* 'jeffrey' @'localhost';</li>
+          <br>
+          <li><strong>flush privileges;</strong></li>
+        </ul>
+        <br>
+        <li>생성한 사용자로 접속</li>
+        <ul>
+          <li>mysql -h host -u DB_USER -p DB_Name</li>
+          <li>mysql -h localhost -u jeffrey -p connectdb</li>
+        </ul>
+      </ul>
+      <br>
+      <li>MySQL 명령어</li>
+      <ul>
+        <li><a href="https://dev.mysql.com/doc/refman/8.0/en/create-database.html">MySQL Documentation</a></li>
+        <li><a href="https://www.rosehosting.com/blog/create-a-new-mysql-user-and-grant-permissions-to-mysql-database/">Create user, Grant Permissions</a></li>
+      </ul>
+    </ul>
+
+  </div>
+
+
+  <div>
+    <h1>외부 파일로 table 작성</h1>
+
+    <ol>
+      <li>cmd창에서 해당 파일이 있는 디렉토리로 이동 후</li>
+      <li>mysql -u[USER_NAME] -p [DB_NAME] < 외부파일.sql</li>
+      <li>mysql -u[USER_NAME] -p [DB_NAME] 접속 후</li>
+      <li>show tables  로 table이 생성되었는지 확인</li>
+    </ol>
+
+    <ul>
+      <li>해당 테이블의 구조를 알고 싶다</li>
+      <ul>
+        <li>desc [table_name];</li>
+      </ul>
+    </ul>
+  </div>
+
+  <div>
+    <h1></h1>
+  </div>
+</body>
+
+</html>
