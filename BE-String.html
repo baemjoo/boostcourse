@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>180102 - String</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+</head>
+<body>
+  <h1>코드 리뷰</h1>
+<ol>
+  <li>LocalDateTime</li>
+  <br>
+  <ul>
+    <li>
+      날짜와 시간을 동시에 표시해야하는 경우 LocalDate 또는 LocalTime을 따로 부르기 보다
+      LocalDateTime을 호출하는 것이 좋다. 가령 12월 30일 23시 59분에 호출했을 경우
+      따로 호출할 때 Date는 30일 Time은 31일 0시0분일 수 있기 때문이다.
+      사용자가 많은 웹 서비스의 특성상 적은 가능성의 케이스도 충분히 발생 가능성이 높다.
+    </li>
+    <li>참고 링크 : <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html"> DateTimeFormatter</a></li>
+  </ul>
+  <br>
+  <li>String Format</li>
+  <br>
+  <ul>
+    <li>
+      예를 들어 현재시간 : year month day hour minute을 추가할 때
+      문자열을 + 연산자로 더하는 경우 메모리에서는 아래와 같이 순차적으로 새로운 문자열이 생성됩니다.
+      <p>현재시간 : year</p>
+      <p>현재시간 : year month</p>
+      <p>현재시간 : year month day</p>
+      <p>현재시간 : year month day hour</p>
+      <p>현재시간 : year month day hour minute</p>
+      중간에 생성된 임시 문자열들은 나중에 자동적으로 메모리에서 지워지긴 하지만
+      서버개발을 할 때 코드가 동시에 수백, 숸의 많은 사용자로부터 반복적으로 실행될 수
+      있다는 것을 명심하고 더 나은 코드를 작성해야 합니다.
+    </li>
+    <br>
+    <li>효율적인 문자열 조합 방법</li>
+    <ol>
+      <li>StringBuffer</li>
+      <ul>
+        <li>
+          StringBuffer 객체 생성 후 append를 사용하여 문자열을 덧붙일 경우에는
+          매번 새로운 String 객체를 생성하는 대신 내부적으로 character array를 이용하여
+          효율적인 연산을 수행합니다.
+        </li>
+        <li>
+          전체 생성될 길이를 예측할 수 있다면 StringBuffer 생성시에 initial capacity를 명시하는 것이
+          좋고 그렇지 않으면 데이터가 16글자를 넘어갈 때 마다 더 큰 버퍼를 새로 생성하고, 기존 버퍼의
+          내용을 복사하는 오버헤드가 발생합니다.
+      </li>
+      <li>
+        <p>StringBuffer()</p>
+        <p>String str = new StringBuffer();</p>
+        <br>
+        <p>StringBuffer(int capacity)</p>
+        <p>  StringBuffer strbuf = new StringBuffer(50);</p>
+        <br>
+        <p>StringBuffer(String content)</p>
+        <p>String str1 = "hello";</p>
+        <p>String str2 = new StringBuffer().append(str1).append("world").toString();</p>
+      </li>
+      <li>참고 링크 : <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html">StringBuffer</a></li>
+      </ul>
+      <br>
+      <li>String.format</li>
+      <ul>
+        <li>String.format메소드를 이용하면 일종의 틀을 만들어 문자열을 찍어낼 수 있습니다.
+        여러 변수들을 동시에 입력해서 한 번의 하나의 String으로 만들기 때문에 매우 효율적입니다.</li>
+        <li>
+          Project1 코드 예시
+          <p>time = 현재시간의 정보를 갖고 있는 경우</p>
+          <p>String.format("현재 시간 : %s",time)</p>
+        </li>
+        <li>참고 링크 : <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-">String.format<a></li>
+      </ul>
+    </ol>
+  </ul>
+
+</ol>
+</body>
+
+
+</html>
