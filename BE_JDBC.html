@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>190107-JDBC</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+<style>
+  strong{color:blue;}
+</style>
+</head>
+<body>
+
+<div>
+  <h3>JDBC (Java Database Connectivity)</h3>
+  <ul>
+    <li>자바를 이용한 데이터베이스 접속과 SQL문장의 실행, 그리고 실행 결과로 얻어진
+    데이터의 핸들링을 제공하는 방법과 절차에 관한 규약</li>
+    <li>자바 프로그램내에서 SQL문을 실행하기 위한 자바 API</li>
+    <li>SQL과 프로그래밍 언어의 통합 접근 중 한 형태</li>
+    <li><h4>JAVA는 표준 인터페이스인 JDBC API를 제공</h4></li>
+    <li><h4>데이터베이스 벤더 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.</h4></li>
+  </ul>
+</div>
+
+<div>
+  <h3>JDBC를 이용한 프로그래밍 방법</h3>
+  <ul>
+    <li>import java.sql.*</li>
+    <li>드라이버를 로드한다.</li>
+    <ul>
+      <li><strong>Class.forName("com.mysql.jdbc.Driver");</strong></li>
+    </ul>
+    <li>Connection 객체를 생성</li>
+    <ul>
+      <li><strong>String dburl = "jdbc:mysql://localhost/dbName";</strong></li>
+      <li><strong>Connection con = DriverManager.getConnection(dburl,ID,PASSWORD)</strong></li>
+      <li>Connection 객체를 생성하는 것 -> DB에 접속됐을 때 얻을 수 있는 객체</li>
+      <li>즉, DB에 접속하는 부분</li>
+    </ul>
+    <li>Statement 객체를 생성 및 질의 수행</li>
+    <ul>
+      <li><strong>Statement stme= con.cresteStatement();</strong></li>
+      <li>쿼리 문을 생성하는 것, 또 실행하는 것</li>
+      <li>Statement도 인터페이스</li>
+    </ul>
+    <li>SQL문에 결과물이 있다면 ResultSet 객체를 생성</li>
+    <ul>
+      <li><strong>ResultSet rs = stmt.</strong></li>
+      <ul>
+        <li><strong>.execute("query")   //any SQL</strong></li>
+        <li><strong>.executeQuery("query")   //SELECT</strong></li>
+        <li><strong>.executeUpdate("query")   //INSERT,UPDATE,DELETE</strong></li>
+      </ul>
+      <li>query문의 결과를 ResultSet으로부터 시작해서 하나씩 꺼내옵니다.</li>
+      <li>Next() 메소드를 통해 결과 값이 있다면 true/ 없다면 false</li>
+    </ul>
+    <li>모든 객체를 닫는다. close()</li>
+    <ul>
+      <li><strong>rs.close();</strong></li>
+      <li><strong>stmt.close();</strong></li>
+      <li><strong>con.close();</strong></li>
+      <li>생성 순서의 역순으로 닫는다.</li>
+    </ul>
+  </ul>
+
+  <h3>JDBC 클래스의 생성 단계</h3>
+  <ol>
+    <li>DriverManager를 이용하여 Connection 인스턴스를 얻는다.</li>
+    <li>Connection을 통해서 Statement를 얻는다.</li>
+    <li>Statement를 이용해 ResultSet을 얻는다.</li>
+    <li>열었던 반대 순서로 닫아준다.</li>
+  </ol>
+</div>
+</body>
+<script></script>
+</html>
