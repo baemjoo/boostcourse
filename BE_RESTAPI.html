@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>190109 - BE_RESTAPI</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div>
+<h1>API 란?</h1>
+<ul>
+  <li>API는 Application Programming Interface 의 약자입니다.</li>
+  <li>API는 응용 프로그램에서 사용할 수 있도록, 운영체제나 프로그래밍 언어가 제공하는 기능을 제어하는 기능을 제어할 수 있게 만든 인터페이스를 뜻합니다.</li>
+  <li><a href="https://docs.oracle.com/javase/8/docs/api/">java API 문서</a></li>
+  <li>구현코드를 알지 못해도 인터페이스만 알면 사용할 수있는것, 또 이렇게 프로그래밍을 할 때 필요한 인터페이스를 API라고 합니다.</li>
+</ul>
+</div>
+
+<div>
+  <h1>REST API 란?</h1>
+  <ul>
+    <li>REST API는 REpresentational State Transfer 의 약자입니다.</li>
+    <li>REST 형식의 API입니다.</li>
+    <li>핵심 컨텐츠 및 기능을 외부사이트에서 활용할 수 있도록 제공되는 인터페이스입니다.</li>
+    <li>서비스 업체들이 다양한 REST API를 제공함으로써, 클라이언트는 이러한 REST API들을 조합한 어플리케이션을 만들 수 있게 되었습니다. 이를 매시업(Mashup) 이라고 합니다.</li>
+  </ul>
+</div>
+
+<div>
+  <h1>REST API</h1>
+  <ul>
+    <li>REST가 지켜야 하는 스타일</li>
+    <ul>
+      <li>client-server</li>
+      <li>stateless</li>
+      <li>cache</li>
+      <li>uniform interface</li>
+      <ol>
+        <li>리소스가 URI로 식별되야 합니다.</li>
+        <li>리소스를 생성,수정,추가하고자 할 때 HTTP메시지에 표현을 해서 전송해야 합니다.</li>
+        <li>메시지는 스스로 설명할 수 있어야 합니다.</li>
+        <li>어플리케이션의 상태는 Hyperlink를 이용해 전이되야 합니다.(HATEOAS)</li>
+      </ol>
+      <li>layered system</li>
+      <li>code-on-demand</li>
+    </ul>
+    <li>스타일이란 제약조건의 집합을 의미합니다.</li>
+    <li>위의 제약조건의 집합을 지켜야만 REST라고 말할 수 있습니다.</li>
+  </ul>
+</div>
+
+<div>
+  <h1>Web API</h1>
+  <ul>
+    <li>URI는 정보의 자원을 표현해야 합니다.</li>
+    <li>자원에 대한 행위는 HTTP Method(GET,POST,PUT,DELETE)로 표현합니다.</li>
+    <li>슬래시 구분자(/)는 계층을 나타낼 때 사용합니다.</li>
+    <ul>
+      <li>URI 마지막 문자로 슬래시 구분자를 포함하지 않습니다.</li>
+      <li>하이픈은 URI의 가독성을 높일 때 사용합니다.</li>
+      <li>언더바는 사용하지 않습니다.</li>
+      <li>URI의 경로는 소문자만 사용합니다.</li>
+      <li>파일 확장자는 URI에 포함하지 않습니다.</li>
+      <li>Accept Header를 사용합니다.</li>
+    </ul>
+  </ul>
+</div>
+
+<div>
+  <h1>상태코드</h1>
+  <ol>
+    <li>성공</li>
+    <ul>
+      <li>200</li>
+      <ul>
+        <li>클라이언트의 요청을 정상적으로 수행함</li>
+      </ul>
+      <li>201</li>
+      <ul>
+        <li>클라이언트가 어떠한 리소스 생성을 요청, 해당 리소스가 성공적으로 생성됨(POST를 통한 리소스 생성 작업 시)</li>
+      </ul>
+    </ul>
+    <li>클라이언트로 인한 오류</li>
+    <ul>
+      <li>400</li>
+      <ul>
+        <li>클라이언트의 요청이 부적절 할 경우 사용하는 응답코드</li>
+      </ul>
+      <li>401</li>
+      <ul>
+        <li>클라이언트가 인증되지 않은 상태에서 보호된 리소스를 요청했을 때 사용하는 응답코드</li>
+      </ul>
+      <li>403</li>
+      <ul>
+        <li>로그인 하지 않은 유저가 로그인 했을 때, 요청 가능한 리소스를 요청했을 때</li>
+        <li>유저 인증상태와 관계 없이 응답하고 싶지 않은 리소스를 클라이언트가 요청했을 떄 사용하는 응답코드</li>
+      </ul>
+      <li>405</li>
+      <ul>
+        <li>클라이언트가 요청한 리소스에서는 사용 불가능한 Method를 이용했을 경우 사용하는 응답코드</li>
+      </ul>
+    </ul>
+    <li>서버로 인한 오류</li>
+    <ul>
+      <li>301</li>
+      <ul>
+        <li>클라이언트가 요청한 리소스에 대한 URI가 변경 되었을 떄 사용하는 응답코드</li>
+      </ul>
+      <li>500</li>
+      <ul>
+        <li>서버에 문제가 있을 경우 사용하는 응답코드</li>
+      </ul>
+    </ul>
+  </ol>
+
+</div>
+
+</body>
+</html>
