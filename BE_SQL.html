@@ -83,16 +83,35 @@
         <br>
         <li>권한 부여</li>
         <ul>
+          <li><strong>mysql database에서 수행해야함.</strong></li>
+          <li><strong>use mysql;</strong></li>
           <li>grant all on DB.* to 'USER NAME' @'USER HOST'; </li>
           <li>grant all on connectdb.* 'jeffrey' @'localhost';</li>
           <br>
           <li><strong>flush privileges;</strong></li>
+        </ul>
+        <li>권한 삭제</li>
+        <ul>
+          <li>revoke all privileges on *.* from 'USER NAME' @'USER HOST';</li>
+          <li>revoke all privileges on *.* from 'todouser' @'localhost';</li>
         </ul>
         <br>
         <li>생성한 사용자로 접속</li>
         <ul>
           <li>mysql -h host -u DB_USER -p DB_Name</li>
           <li>mysql -h localhost -u jeffrey -p connectdb</li>
+        </ul>
+      </ul>
+      <br>
+      <li>현재 접속 정보</li>
+      <ul>
+        <li>현재 접속한 계정 정보</li>
+        <ul>
+          <li>select user()</li>
+        </ul>
+        <li>현재 접속한 Database 정보</li>
+        <ul>
+          <li>select database()</li>
         </ul>
       </ul>
       <br>
