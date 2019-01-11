@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>190111 - FE_DOM</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+<style> </style>
+</head>
+<body>
+<div>
+  <h1>DOM Node 조작하기</h1>
+  <ul>
+    <li>DOM, 즉 HTML은 동적으로 다양하게 변경될 수 있습니다.</li>
+    <li>DOM APIs 에서는 다양한 메소드와 속성을 지원하고 있습니다.</li>
+    <li>DOM API느 라이브러리를 쓰는 것 보다 대체로 더 빠릅니다.(그 차이가 크진 않습니다.)</li>
+  </ul>
+</div>
+
+<div>
+  <h1>DOM 탐색 APIs</h1>
+  <h2>몇가지 유용한 속성</h2>
+  <ul>
+    <li>tagName : 엘리먼트의 태그명 반환</li>
+    <li>textContent : 노드의 텍스트 내용을 설정하거나 반환</li>
+    <li>nodeType : 노드의 노드 유형을 숫자로 반환</li>
+  </ul>
+  <h3>사용 예제</h3>
+  <ul>
+    <li>ex) class가 edwith-table일 경우</li>
+    <ul>
+      <li>var a = document.querySelector(".edwith-table");</li>
+      <li>a.textContent;       //해당 element가 가지는 text node 출력</li>
+      <li>a.tagName;           //해당 element의 태그 내용의 속성이 출력, 예시는 "TABLE" 출력</li>
+      <li>a.innerHTML          //해당 element의 HTML 하위에 있는 element들이 HTML 문자열로 출력</li>
+      <li>a.firstElementChild  //첫번째 자식이 출력</li>
+      <li>a.remove();          //해당 element가 삭제됨(브라우저 지원이 낮다.)</li>
+      <li></li>
+    </ul>
+  </ul>
+  <br>
+  <h2>이동</h2>
+  <ul>
+    <li>childNodes : 엘리먼트의 자식 노드의 노드 리스트 반환(텍스트 노드, 주석 노드 포함)</li>
+    <li>firstChild : 엘리먼트의 첫 번째 자식 노드를 반환(firstChild의 공백이나 텍스트가 있으면 그것을 첫 번째 자식이라고 인식.)</li>
+    <li>firstElementChild : 첫 번째 자식 엘리먼트를 반환 (firstChild보다 잘 쓰인다.)</li>
+    <li>parentElement : 엘리먼트의 부모 엘리먼트 반환</li>
+    <li>nextSibling : 동일한 노드 트리 레벨에서 다음 노드를 반환</li>
+    <li>nextElementSibling : 동일한 노드 트리 레벨에서 다음 엘리먼트 반환</li>
+  </ul>
+  <h3>사용 예제</h3>
+  <pre>
+    <strong>
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;ul&gt;
+        &lt;li&gt;1. 웹 프로그래밍 기초&lt;/li&gt;
+        &lt;li&gt;2. DB연결 웹 애플리케이션&lt;/li&gt;
+        &lt;li&gt;3. 웹 애플리케이션 개발 1/4&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  </strong>
+  </pre>
+  <ol>
+    <li>childNodes</li>
+    <ul>
+      <li><a href="https://jsbin.com/qabuciz/edit?html,js,console,output">childNodes 예제</a></li>
+      <li>childNodes는 개행문자를 childnode라고 생각하여 첫번째와 마지막 결과값이 text이다.</li>
+    </ul>
+    <li>firstChild</li>
+    <ul>
+      <li><a href="https://jsbin.com/sunidelemu/edit?html,js,console,output">firstChild 예제</a></li>
+      <li>childNode와 값이 개행문자를 childnode라고 생각하여 text가 출력된다.</li>
+    </ul>
+    <li>firstElementChild</li>
+    <ul>
+      <li><a href="https://jsbin.com/retoses/2/edit?html,js,console,output">firstElementChild 예제</a></li>
+      <li>element의 첫번째 자식으로 div가 출력된다.</li>
+    </ul>
+    <li>parentElement</li>
+    <ul>
+      <li><a href="https://jsbin.com/jonumig/2/edit?html,js,console,output">parentElement 예제</a></li>
+      <li>div의 부모 엘리먼트로 body가 출력된다.</li>
+    </ul>
+    <li>nextSibling</li>
+    <ul>
+      <li><a href="https://jsbin.com/jonumig/6/edit?html,js,console,output">nextSibling 예제</a></li>
+      <li>li1의 첫 번째 엘리먼트인 웹 프로그래밍 기초의 다음 시블링으로 개행문자인 text가 출력된다.</li>
+    </ul>
+    <li>nextElementSibling</li>
+    <ul>
+      <li><a href="https://jsbin.com/podawep/2/edit?html,js,console,output">nextElementSibling 예제</a></li>
+      <li>li1의 첫 번째 엘리먼트인 웹 프로그래밍 기초의 다음 엘리먼트 시블링으로 li2인 2. DB연결 웹 어플리케이션이 출력된다. </li>
+    </ul>
+  </ol>
+  <br>
+  <h2>DOM 조작 API</h2>
+  <ul>
+    <li>removeChild() : 엘리먼트의 자식 노드 제거</li>
+    <li>appendChild() : 마지막 자식 노드로 자식 노드를 엘리먼트에 추가</li>
+    <li>insertBefore() : 기존 자식 노드 앞에 새 자식 노드를 추가</li>
+    <li>cloneNode() : 노드 복제</li>
+    <li>replaceChild() : 엘리먼트의 자식 노드 바꿈</li>
+    <li>closest() : 상위로 올라가면서 가장 가까운 엘리먼트를 반환</li>
+  </ul>
+  <h3>사용 예제</h3>
+  <ol>
+    <li>removeChild()</li>
+    <ul>
+      <li><a href="https://jsbin.com/lexobe/13/edit?html,js,console,output">removeChild()</a></li>
+      <li>해당 엘리먼트를 삭제합니다.</li>
+    </ul>
+    <li>appendChild()</li>
+    <ul>
+      <li><a href="https://jsbin.com/wunocen/5/edit?html,js,console,output">appendChild()</a></li>
+      <li>맨 마지막에 childnode를 추가합니다.</li>
+    </ul>
+    <li>insertBefore()</li>
+    <ul>
+      <li><a href="https://jsbin.com/xogutix/5/edit?html,js,output">insertBefore()</a></li>
+      <li>해당 엘리먼트를 지정한 위치에 추가합니다.</li>
+    </ul>
+    <li>cloneNode()</li>
+    <ul>
+      <li><a href="https://jsbin.com/puyeled/3/edit?html,js,output">cloneNode()</a></li>
+      <li>해당 엘리먼트를 복사합니다.</li>
+    </ul>
+    <li>replaceChild()</li>
+    <ul>
+      <li><a href="https://jsbin.com/rumadi/8/edit?html,js,output">replaceChild()</a></li>
+      <li>해당 엘리먼트를 대체합니다.</li>
+    </ul>
+    <li>closest()</li>
+    <ul>
+      <li><a href="https://jsbin.com/rumadi/13/edit?html,js,console,output">closest()</a></li>
+      <li>상위 엘리먼트를 반환합니다.</li>
+    </ul>
+  </ol>
+  <br>
+  <h2>HTML을 문자열로 처리해주는 DOM 속성/메소드</h2>
+  <ul>
+    <li>innerText : 지정된 노드와 모든 자손의 텍스트 내용을 설정하거나 반환</li>
+    <li>innerHTML : 지정된 엘리먼트의 내부 html을 설정하거나 반환</li>
+    <li>insertAdjacenHTML() : HTML로 텍스트를 지정된 위치에 삽입</li>
+  </ul>
+  <h3>사용 예제</h3>
+  <ul>
+    <li><a href="https://jsbin.com/sukihiw/6/edit?html,js,output">innerText 예제</a></li>
+    <li>해당 노드의 텍스트 내용을 바꿉니다.</li>
+  </ul>
+  <ul>
+    <li><a href="https://jsbin.com/sutejo/3/edit?html,js,output">innerHTML 예제</a></li>
+    <li>해당 엘리먼트의 html내용을 바꿉니다.</li>
+  </ul>
+  <ul>
+    <li><a href="">insertAdjacenHTML() 예제</a></li>
+    <li>해당 위치에 텍스트를 삽입합니다.</li>
+  </ul>
+</div>
+
+</body>
+<script></script>
+</html>
