@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>190114 - FE_Web_Animation</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+<style> </style>
+</head>
+<body>
+<div>
+  <h1>Animation</h1>
+  <ul>
+    <li>애니메이션은 반복적인 움직임의 처리입니다.</li>
+    <li>웹 UI 애니메이션은 자바스크립트로 다양하게 제어할 수 있지만, 규칙적이고 비교적 단순한 방식으로 동작하는 방식은 CSS3의 transition과 transform속성을 사용해서 대부분 구현 가능합니다.</li>
+    <li>그뿐만 아니라 자바스크립트보다 더 빠른 성능을 보장한다고 합니다.</li>
+    <li>모바일 웹에서는 CSS를 사용한 방법이 훨씬 더 빠릅니다.</li>
+  </ul>
+</div>
+
+<div>
+  <h1>FPS (Frame Per Second)</h1>
+  <ul>
+    <li>1초당 화면에 표현할 수 있는 정지화면(frame) 수입니다.</li>
+    <li>매끄러운 애니메이션은 보통 60FPS 입니다.</li>
+    <li>애니메이션은 CSS의 transition속성으로 CSS속성을 변경하거나 JavaScript로 CSS속성을 변경할 수 있습니다.</li>
+    <li>간단하고 규칙적인 것은 CSS</li>
+    <li>세밀한 조작이 필요한 것 Javascript</li>
+  </ul>
+</div>
+
+<div>
+  <h1>Javascript Animation</h1>
+  <ul>
+    <li>setInterval</li>
+    <li>setTimeout</li>
+    <li>requestAnimationframe</li>
+    <li>Animations API</li>
+  </ul>
+
+  <h3>setInterval()</h3>
+  <pre>
+    const interval = window.setInterval(()=> {
+    console.log('현재시각은', new Date());
+  },1000/60);
+
+  window.clearInterval(interval);
+  </pre>
+  <ul>
+    <li>정해진 시간에 함수가 실행된다고 보장할 수 없다.</li>
+    <li>interval로 시간을 정해놨지만 그 사이에 마우스 클릭 callback이나 Timer 등 뭔가 다른 일이 일어나면 interval로 정해진 게 비동기 작업이라 밀린다.</li>
+    <li>동기적인 다른 작업이 중간에 들어오면 비동기 작업이 밀려서 나중에 실행된다.</li>
+    <li>따라서 setInterval을 사용하는 애니메이션 구현을 잘 하지 않습니다.</li>
+  </ul>
+
+  <h3>setTimeout()</h3>
+  <pre>
+    let count = 0;
+    function animate() {
+    setTimeout(() => {
+      if(count >= 20) return;
+      console.log('현재시각은', new Date());
+      count++;
+      animate();
+    },500);
+  }
+  animate();
+  </pre>
+  <ul>
+    <li>지정된 시간 이후에 한 번만 실행되는 코드이다.</li>
+    <li>애니메이션을 구현하려면 재귀호출을 하면 됩니다.</li>
+    <li>재귀호출을 하면서 setTimeout이라는 콜백 함수는 콜 스택에서 비워지게 된다. 그래서 stackoverflow같은 현상이 일어나지 않습니다.</li>
+  </ul>
+
+  <h3>requestAnimationFrame</h3>
+  <pre>
+    var count = 0;
+    var el=document.querySelector(".outside");
+    el.style.left = "0px";
+
+    function run() {
+     if(count > 70) return;
+     count = count + 1;
+     el.style.left =  parseInt(el.style.left) + count + "px";
+     requestAnimationFrame(run);
+   }
+
+  requestAnimationFrame(run);
+  </pre>
+  <ul>
+    <li>setTimeout의 대안으로 생긴 것이 바로 requestAnimationFrame이다.</li>
+    <li>특정 조건이 될 때까지 계속 함수를 연속적으로 호출하는 것이다.</li>
+    <li>requestAnimationFrame함수를 통해서 원하는 함수를 인자로 넣어주면 브라우저는 인자로 받은 그 비동기 함수가 실행될 가장 적절한 타이밍에 실햄시켜 줍니다.</li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame 참고 링크</a></li>
+  </ul>
+</div>
+
+<div>
+  <h1>CSS3 transition 활용</h1>
+  <ul>
+    <li>CSS3 transition</li>
+    <li>CSS3 transform</li>
+  </ul>
+
+  <h3>CSS transition</h3>
+  <ul>
+    <li>javascript 로 구현하는 것보다 더 빠르다고 알려져 있다.</li>
+    <li><a href="./FE_CSS_exam1.html">참고 링크</a></li>
+    <li>더 빠른 css3 animation 관련 속성들</li>
+    <ul>
+      <li>GPU 가속을 이용하는 속성을 사용하면 애니메이션 처리가 빠릅니다.</li>
+      <ul>
+        <li>transform:translateXX()</li>
+        <li>transform:scale()</li>
+        <li>transform:rotate()</li>
+        <li>opacity (불투명)</li>
+      </ul>
+      <li><a href="http://d2.naver.com/helloworld/2061385">참조 링크</a></li>
+    </ul>
+  </ul>
+
+</div>
+
+<div>
+  <h3>arrow function</h3>
+  <ul>
+    <li>화살표 함수 표현은 function 표현에 비해 구문이 짧고 자신의 this,arguments,super 또는 new.target을 바인딩 하지 않는다.</li>
+    <li>화살표 함수는 익명 함수로만 사용할 수 있다.</li>
+    <li>또한 콜백 함수로 사용할 수 있다. 이 경우 일반적인 함수 표현식보다 표현이 간결하다.</li>
+    <li>이 함수 표현은 메소드 함수가 아닌 곳에 가장 적합하고 생성자로서 사용할 수 없다.</li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98">arrow function 참고 링크</a></li>
+  </ul>
+
+</div>
+</body>
+<script></script>
+</html>
