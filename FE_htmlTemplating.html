@@ -49,8 +49,14 @@ li{
 <div>
 <h2>HTML 코드안에 숨기기</h2>
 <ul class="content">
-
 </ul>
+</div>
+
+
+<div>
+  <h2>Template literal</h2>
+  <ul class="temp_literal">
+  </ul>
 </div>
 </body>
 
@@ -128,7 +134,32 @@ scrip_data.forEach((v) =>{
                                   .replace("{price}",v.price);
 
   scrip_content.innerHTML +=script_res_html;
-})
+});
+
+
+
+//template literal
+//replace 메소드 대신 아주 쉽게 적용할 수 있는 방법
+var literal_data = [
+  {title : "PASCUCCI",content:"공부하기 좋음",menu:"카페모카"},
+  {title : "STARBUCKS",content:"사람 너무 많음",menu:"아이스아메리카노"},
+  {title : "Gong-cha",content:"밀크티 노우",menu:"밀크티"},
+  {title : "Ediya",content:"가성비갑쓰",menu:"초콜렛칩플라치노"}
+];
+
+var literal_html = "";
+
+literal_data.forEach((data)=>{
+  literal_html += `
+  <li>
+    <h4>${data.title}</h4>
+    <p>${data.content}</p>
+    <div>${data.menu}</div>
+  </li>
+  `;
+});
+
+document.querySelector(".temp_literal").innerHTML = literal_html;
 </script>
 
 
