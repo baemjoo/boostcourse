@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>190115 - FE_htmlTemplating</title>
+<!--파일이 UTF-8로 저장되고 웹브라우저가 UTF-8로 열도록-->
+<meta charset="utf-8">
+<style>
+ul{
+  list-style:none;
+}
+li{
+  border:1px solid gray;
+}
+ </style>
+</head>
+<body>
+
+<div>
+<h1>HTML Templating</h1>
+<ul>
+  <li>일정한 형식의 HTML Template를 만들어서 그 안에 Data(JSON)를 삽입하여 화면에 추가하는 작업</li>
+  <li>렌더링이 클라이언트에 일어나냐 서버에서 일어나냐에 대한 고민은 여러 상황에 맞춰서 사용하는데</li>
+  <li>다음 과정은 서버에서는 Data(JSON 형태), 클라이언트에서는 Data를 HTML에 섞어서 동적으로 처리할 것 이다.</li>
+  <li>만들어진 결과물은 String으로 이 결과를 화면에 DOM API를 이용하여 넣어주는 것이다.</li>
+</ul>
+</div>
+
+<div>
+  <h1>HTML Templating example</h1>
+  <section class="singletemplating">
+  </section>
+
+  <section class="multitemplating">
+  </section>
+</div>
+
+<div>
+  <h1>HTML Template의 보관</h1>
+  <ul>
+      <li>javascript코드 안에서 정적인 데이터를 보관하는 것은 좋지 않기 때문에 다른 곳에 보관할 필요가 있다.</li>
+      <li><strong>서버에서 file로 보관하고 Ajax로 요청해서 받아온다.</strong></li>
+      <li><strong>HTML 코드 안에 숨겨둔다</strong></li>
+      <li>숨겨야 할 데이터가 많다면 별도 파일로 분리해서 Ajax로 가져오는 방법이 좋습니다.</li>
+      <li>하지만 많지 않은 데이터라면 script 태그는 type이 javascript가 아니라면 렌더링 하지 않고 무시하는 속성을 이용합니다.</li>
+  </ul>
+</div>
+
+<div>
+<h2>HTML 코드안에 숨기기</h2>
+<ul class="content">
+
+</ul>
+</div>
+</body>
+
+
+<script id ="template-list-item" type="text/template">
+<li>
+  <h4>{menu}</h4><p>{content}</p><div>{price}</div>
+</li>
+</script>
+
+<script>
+var data = {
+  title : "HTML Templating",
+  content : "edwith web programming",
+  today : 190115
+};
+
+var template = "<li><h4>제목 : {title}</h4><p>내용 : {content}</p><div>날짜 : {today}</div></li>";
+var res = template.replace("{title}",data.title)
+                          .replace("{content}",data.content)
+                          .replace("{today}",data.today);
+
+var resultHTML = document.querySelector(".singletemplating");
+resultHTML.innerHTML = res;
+
+
+//data가 여러개일 경우
+var datas = [
+{
+  title : "HTML Templating",
+  content : "edwith web programming",
+  today : 190115
+},
+{
+  title : "Mobile programming",
+  content : "edwith app programming",
+  today : 190116
+},
+{
+  title : "Swift",
+  content : "edwith ios programming",
+  today : 190117
+},
+{
+  title : "Project2",
+  content : "edwith boostcourse",
+  today : 190118
+}
+];
+
+var resultsHTML = document.querySelector(".multitemplating");
+
+datas.forEach((value) =>{
+  var ress = template.replace("{title}",value.title)
+                            .replace("{content}",value.content)
+                            .replace("{today}",value.today);
+  resultsHTML.innerHTML += ress;
+});
+
+
+//template를 HTML안에 숨기기
+var scrip_data = [
+    {menu : "삼겹살" , content:"마포갈매기",price:7500},
+    {menu : "치킨" , content:"BHC",price:17000},
+    {menu : "피자" , content:"수피자",price:22000}
+];
+
+var script_html = document.querySelector("#template-list-item").innerHTML;
+var scrip_content = document.querySelector(".content");
+
+//for each 문
+scrip_data.forEach((v) =>{
+  var script_res_html = script_html.replace("{menu}",v.menu)
+                                  .replace("{content}",v.content)
+                                  .replace("{price}",v.price);
+
+  scrip_content.innerHTML +=script_res_html;
+})
+</script>
+
+
+</html>
