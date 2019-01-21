@@ -1,7 +1,5 @@
-body{
-  background-color:#FFF;
-}
 
+/* 메인페이지 레이아웃 */
 #wrap{
   position:relative;
   min-width: 1052px;
@@ -26,6 +24,18 @@ body{
 #header .lnk{
   float:right;
   margin: 30px 30px 0 0;
+}
+
+#header .lnk > .headerbtn{
+  width:200px;
+  height:40px;
+  display: inline-block;
+  border: none;
+  text-align: center;
+  background-color:#93DAFF;
+  color:#FFF;
+  font-size:1em;
+  text-decoration: none;
 }
 
 /* container 영역 */
@@ -55,9 +65,9 @@ body{
   background-color: #323C73;
   color:#FFF;
   font-size: 2em;
-  vertical-align: middle;
 }
 
+/* todo-list 틀 */
 #content .section .todo-list{
   min-width: 100%;
   min-height: 80px;
@@ -65,14 +75,17 @@ body{
   margin: 5% 0 5% 0;
 }
 
+/* todo-list 1) title */
 #content .section .todo-list .todo-list-title{
   font-size: 1.2em;
   color:#000;
-  padding:2% 2% 2% 2%;
+  border:2px;
+  padding:3% 2% 2% 2%;
 }
 
+/* todo-list 2) content */
 #content .section .todo-list .todo-list-content{
-  font-size:0.5em;
+  font-size:0.7em;
   color:#1E3269;
   padding:2% 2% 2% 2%;
 }
@@ -80,3 +93,21 @@ body{
 li,ol,ul{
   list-style: none;
 }
+
+/* 할일 등록 레이아웃 */
+#registration_wrap{
+  position:relative;
+  min-width: 1052px;
+  min-height: 100%;
+  background-color: #FFF;
+  text-align: center;
+}
+#registration_wrap .regis_form{
+  position:relative;
+  min-width: 50%;
+  min-height:500px;
+  margin: 5% 10% 5% 10%;
+  background-color: #c8c8c8;
+}
+
+#registration_todo .
