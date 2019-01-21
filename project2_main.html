@@ -17,8 +17,7 @@
 <div id="header">
   <div class="layout_in">
     <div class="lnk">
-      header 영역
-      새로운 TODO 등록 버튼 추가
+        <button type="button" class="headerbtn" onclick="alert_click()">새로운 TODO 등록</button>
     </div>
   </div>
 </div>
@@ -39,7 +38,25 @@
       자바스크립트 공부하기
     </div>
     <div class="todo-list-content">
-      날짜 : 2019-01-21 만든이 : 배명주 우선순위 : 2
+      등록날짜 : 2019.01.21 배명주 우선순위 2 &ensp;  <button type="button" name="todo_doing">→</button>
+    </div>
+  </div>
+
+  <div class="todo-list">
+    <div class="todo-list-title">
+      자바스크립트 공부하기
+    </div>
+    <div class="todo-list-content">
+      등록날짜 : 2019.01.21 배명주 우선순위 2 &ensp;  <button type="button" name="todo_doing">→</button>
+    </div>
+  </div>
+
+  <div class="todo-list">
+    <div class="todo-list-title">
+      자바스크립트 공부하기
+    </div>
+    <div class="todo-list-content">
+      등록날짜 : 2019.01.21 배명주 우선순위 2 &ensp;  <button type="button" name="todo_doing">→</button>
     </div>
   </div>
 </div>  <!-- TODO section div-->
@@ -62,4 +79,9 @@
 </div> <!-- container -->
 </div>  <!-- wrap -->
 </body>
+
+<script>
+
+function alert_click(){window.alert("새로운 TODO 등록 버튼 클릭");}
+</script>
 </html>
