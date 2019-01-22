@@ -97,13 +97,13 @@ li,ol,ul{
 /* 할일 등록 레이아웃 */
 #register_wrap{
   position:relative;
-  min-width: 100%;
+  min-width: 1052px;
   min-height: 100%;
   background-color: #c8c8c8;
 }
 #register_wrap .register_form{
   position:relative;
-  min-width: 512px;
+  min-width: 700px;
   min-height:300px;
   margin: 5% 10% 5% 10%;
   background-color: #FFF;

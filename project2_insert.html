@@ -25,9 +25,12 @@
     <input type="text" name="name" placeholder="홍길동" maxlength="8" size="20">
     <br>
     <p>우선순위를 선택하세요</p>
-    <input type="radio" name="priority" value="1순위">1순위 &ensp;
-    <input type="radio" name="priority" value="2순위">2순위 &ensp;
-    <input type="radio" name="priority" value="2순위">3순위 &ensp;
+    <input type="radio" id="p1" name="priority" value="priority1">
+    <label for="p1">1순위</label>
+    <input type="radio" id="p2" name="priority" value="priority2">
+    <label for="p2">2순위</label>
+    <input type="radio" id="p3" name="priority" value="priority3">
+    <label for="p3">3순위</label>
     <br>
     <br>
     <button id="backbtn" class="backbtn" type="button" name="button">< 이전</button>
@@ -39,13 +42,10 @@
 </body>
 
 <script>
-
-var regis_title = document.getElementById("title");
-var regis_name = document.getElementById("name");
-
+<!-- main화면으로 돌아가기 -->
 var backbutton = document.getElementById("backbtn");
 backbutton.addEventListener("click",function(){
   history.back();
-})
+});
 </script>
 </html>
