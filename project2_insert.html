@@ -19,7 +19,7 @@
   </div>
   <div class="regis_content">
     <p>어떤일인가요?</p>
-    <input type="text" name="name" placeholder="예시) 세탁소가기 (24자)" maxlength="24" size="48">
+    <input type="text" name="title" placeholder="예시) 세탁소가기 (24자)" maxlength="24" size="48">
     <br>
     <p>누가 할일인가요>?</p>
     <input type="text" name="name" placeholder="홍길동" maxlength="8" size="20">
@@ -31,16 +31,23 @@
     <br>
     <br>
     <button class="backbtn" type="button" name="button">< 이전</button>
-    <button class="btn" type="button" name="button">제출</button>
-    <button class="btn" type="button" name="button">내용지우기</button>
+    <button class="btn" type="submit">제출</button>
+    <button class="btn" type="reset">내용지우기</button>
   </div>
 </div>
 </form>
 </body>
 
 <script>
+
+var regis_title = document.getElementById("title");
+var regis_name = document.getElementById("name");
+
+
+
+
   function remove_all(){
-    
+
   }
 </script>
 </html>
