@@ -95,19 +95,54 @@ li,ol,ul{
 }
 
 /* 할일 등록 레이아웃 */
-#registration_wrap{
+#register_wrap{
   position:relative;
-  min-width: 1052px;
+  min-width: 100%;
   min-height: 100%;
-  background-color: #FFF;
-  text-align: center;
-}
-#registration_wrap .regis_form{
-  position:relative;
-  min-width: 50%;
-  min-height:500px;
-  margin: 5% 10% 5% 10%;
   background-color: #c8c8c8;
 }
+#register_wrap .register_form{
+  position:relative;
+  min-width: 512px;
+  min-height:300px;
+  margin: 5% 10% 5% 10%;
+  background-color: #FFF;
+}
 
-#registration_todo .
+.register_form .regis_header{
+  text-align: center;
+  font-size: 1.5em;
+  border:3px ;
+  padding:5% 0 5% 0;
+}
+
+.register_form .regis_content{
+  text-align: left;
+  font-size: 0.8em;
+  padding:0 20% 5% 20%;
+}
+
+.register_form .backbtn{
+  width:80px;
+  height:30px;
+  display: inline-block;
+  border: 1px solid black;
+  text-align: center;
+  background-color:#FFF;
+  color:#000;
+  font-size:1em;
+  text-decoration:underline;
+  margin: 0 20% 0 0;
+}
+
+.register_form .btn{
+  width:80px;
+  height:30px;
+  display: inline-block;
+  border: none;
+  text-align: center;
+  background-color:#93DAFF;
+  color:#FFF;
+  font-size:1em;
+  text-decoration: none;
+}
