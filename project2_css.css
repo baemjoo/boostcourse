@@ -68,6 +68,10 @@
 }
 
 /* todo-list 틀 */
+#content .section .todo-type{
+  
+}
+
 #content .section .todo-list{
   min-width: 100%;
   min-height: 80px;
